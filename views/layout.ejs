@@ -16,12 +16,9 @@
         <h1 class="text">Loading...</h1>
     </div>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary no-print">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/users/home"> <p class="text-danger ">Akiba Medical Clinic</p></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <a class="navbar-brand" href="/users/home"> <p class="text-danger ">Akiba</p></a>
           <div class="login-status">
             <% if (loggedIn) { %>
             <div class="bubble logged-in">
@@ -40,7 +37,7 @@
         </div>
       </nav>
 
-      <div class="container-">
+      <div class="container">
         <div class="row justify-content-center text-center align-items-center">
 
           <div class="flashes">
@@ -77,9 +74,9 @@
 
 
     <!-- Main Content -->
-    <div class="container">
+    <div class="container d-flex justify-content-center align-items-center mainbody" >
         <%- body %>
-    </div>
+      </div>
 
 </body>
 
