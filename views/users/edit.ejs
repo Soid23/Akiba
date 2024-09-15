@@ -1,0 +1,27 @@
+<div class="shadow-lg col-lg-5" data-aos="fade-up" data-aos-delay="100">
+    <form class="form" method="POST" action="<%=`/users/${user._id}/update?_method=PUT`%>"">
+        <div class=""></div>
+        <h1>New User</h1>
+        <div class="mb-3">
+            <label class="form-label" for="inputfirstName">First Name</label>
+            <input class="form-control" value="<%= user.firstName %>" type="text" name="firstName" id="inputfirstName" placeholder="First Name" autofocus required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="inputsecondName">Second name</label>
+            <input class="form-control" value="<%= user.secondName %>" type="text" name="secondName" id="inputsecondName" placeholder="Second Name" autofocus required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="inputemail">Email Address</label>
+            <input class="form-control" value="<%= user.email %>" type="text" name="email" id="inputemail" placeholder="email" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="inputpassword">Password</label>
+            <input class="form-control" type="password" value="<%= user.password %>" name="password" id="inputpassword" placeholder="password" required>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary mb-2" type="submit"><i class="bi bi-pencil"></i> Edit User</button>
+        </div>
+
+    </form>
+</div>

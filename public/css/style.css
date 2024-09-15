@@ -68,8 +68,78 @@ body{
 
 .mainbody{
   min-height: 80vh;
+  width: 100%;
+  margin: auto!important;
 }
 
 .table{
   margin-top: 2rem!important;
+}
+
+.user-row {
+  margin-bottom: 14px;
+}
+
+.user-row:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown-user {
+  margin: 13px 0;
+  padding: 5px;
+  height: 100%;
+}
+
+.dropdown-user:hover {
+  cursor: pointer;
+}
+
+.table-user-information > tbody > tr {
+  border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+  border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+  border-top: 0;
+}
+.toppad{
+  margin-top:20px;
+}
+
+
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  border: none;
+  position: relative;
+  margin-bottom: 5rem;
+  box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,0.1), 0 0.9375rem 1.40625rem rgba(90,97,105,0.1), 0 0.25rem 0.53125rem rgba(90,97,105,0.12), 0 0.125rem 0.1875rem rgba(90,97,105,0.1);
+}
+.l-bg-cherry {
+  background: linear-gradient(to right, #493240, #f09) !important;
+  color: #fff;
+}
+
+.l-bg-blue-dark {
+  background: linear-gradient(to right, #373b44, #4286f4) !important;
+  color: #fff;
+}
+
+.l-bg-green-dark {
+  background: linear-gradient(to right, #0a504a, #38ef7d) !important;
+  color: #fff;
+}
+
+.l-bg-orange-dark {
+  background: linear-gradient(to right, #a86008, #ffba56) !important;
+  color: #fff;
+}
+
+.card .card-statistic-3 .card-icon-large .fas, .card .card-statistic-3 .card-icon-large .far, .card .card-statistic-3 .card-icon-large .fab, .card .card-statistic-3 .card-icon-large .fal {
+  font-size: 110px;
 }
