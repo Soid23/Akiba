@@ -1,0 +1,92 @@
+<div class="containner mt-5">
+    <div class="row justify-content-center align-items-center text-center mt-5 mb-5"> 
+      <h1 style="text-transform: uppercase; color: #37b9;">You are viewing the patients home page</h1>
+      <div class="col-lg-3">
+        <a class="btn btn-primary" href="/patients/new">New Patient</a>
+      </div>
+      <div class="col-lg-3">
+        <a class="btn btn-success" href="/patients/index">Saved patients</a>
+      </div>
+    </div>
+  </div> 
+  
+  <div class="container patients">
+    <div class="row justify-content-center text-center align-items-center">
+      <div class="col-lg-10">
+        <h1 class="mt-1 mb-1">All Patients</h1>
+        <table class="table">
+          <thead>
+            <tr class="text-primary lead-400">
+              <th>First Name</th>
+              <th>Second Name</th>
+              <th>Middle Name</th>
+              <th>Patient Number</th>
+              <th>Contact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% patients.forEach(patient => { %>
+            <tr>
+              <td>
+                <a href="<%= `/patients/${patient._id}` %>">
+                  <%= patient.firstname %>
+                </a>
+              </td>
+              <td><%= patient.secondname %></td>
+              <td><%= patient.middlename %></td>
+              <td><%= patient.patientID %></td>
+              <td><%= patient.mobile %></td>
+              <td></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-4">
+        <h4>New Patients in the Last Month</h3>
+        <% if (newPatients.length > 0) { %>
+          <ul>
+            <% newPatients.forEach(newPatient => { %>
+              <li><%= newPatient.firstname %> <%= newPatient.lastname %></li>
+            <% }); %>
+          </ul>
+        <% } else { %>
+          <p>No new patients in the last month.</p>
+        <% } %>
+      </div>
+      <div class="col-lg-4">
+        
+        <h4>Patients with Balances</h3>
+        <% if (patientsWithBalances.length > 0) { %>
+          <ul>
+            <% patientsWithBalances.forEach(patient => { %>
+                <li><%= patient.firstname %> <%= patient.lastname %> - Balance: <%= patient.receipt[0].balance %></li>
+              <% }); %>
+              
+          </ul>
+        <% } else { %>
+          <p>No patients with balances.</p>
+        <% } %>
+      </div>
+      
+      <div class="col-lg-4">
+        <h4>Patients with Follow-ups Today</h3>
+        <% if (patientsWithFollowUps.length > 0) { %>
+          <ul>
+            <% patientsWithFollowUps.forEach(patient => { %>
+              <li><%= patient.firstname %> <%= patient.lastname %></li>
+            <% }); %>
+          </ul>
+        <% } else { %>
+          <p>No patients with follow-ups today.</p>
+        <% } %>
+      </div>
+    </div>
+  </div>
+  
+  

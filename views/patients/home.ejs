@@ -1,0 +1,67 @@
+<div class="containner mt-5">
+    <div class="row justify-content-center align-items-center text-center mt-5 mb-5"> 
+      <h1 style="text-transform: uppercase; color: #37b9;">You are viewing the patients home page</h1>
+      <div class="col-lg-3">
+        <a class="btn btn-primary" href="/patients/new">New Patient</a>
+      </div>
+      <div class="col-lg-3">
+        <a class="btn btn-success" href="/patients/index">Saved patients</a>
+      </div>
+    </div>
+
+    <div class="row justify-content-center col-12">
+        <div class="col-12">
+            <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px">
+                <table class="table table-hover mb-0">
+                    <thead >
+                        <tr>
+                            <th scope="col-lg-2"> First name </th>
+                            <th scope="col-lg-2"> Second name </th>
+                            <th scope="col-lg-2"> Email </th>
+                            <th scope="col-lg-2"> Edit</th>
+                            <th scope="col-lg-2"> delete</th>
+                        </tr>
+                    </thead>
+                    <% patients.forEach(patient => { %>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="<%= `/patients/${patient._id}` %>">
+                                    <%= patient.firstname %>
+                                  </a>
+                            </td>
+                            <td><%= patient.secondname %></td>
+                            <td><%= patient.middlename %></td>
+                            <td><%= patient.patientID %></td>
+                            <td><%= patient.mobile %></td>
+
+                        </tr>
+                        <% } ); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+    </div>
+  </div> 
+
+  <div class="container-fluid">
+    <div class="row">
+        <h1><%= welcomeMessage %></h1>
+        <p>Total Patients: <%= quickStats.totalPatients %></p>
+        <p>Recent Visits: <%= quickStats.recentVisits %></p>
+        <p>Overdue Alerts: <%= quickStats.overdueAlerts %></p>
+      
+        <h2>Recent Visits Summary</h2>
+        <ul>
+          <% recentVisitsSummary.forEach(visit => { %>
+            <li><%= visit.date.toDateString() %> - <%= visit.patientName %> - <%= visit.complaints %></li>
+          <% }) %>
+        </ul>
+      
+        <h2>Patient Data Distribution</h2>
+        <canvas id="ageDistributionChart" width="400" height="200"></canvas>
+
+    </div>
+  </div>
+  
